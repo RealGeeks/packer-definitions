@@ -1,0 +1,5 @@
+tmp
+*.pyc
+template/packer_cache
+server_config/
+server_config.tar

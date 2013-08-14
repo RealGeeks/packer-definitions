@@ -1,5 +1,6 @@
 default: tmp
 tmp: server_config.tar
+	mkdir tmp
 	python2 build.py
 server_config:
 	git clone git@github.com:RealGeeks/server_config.git

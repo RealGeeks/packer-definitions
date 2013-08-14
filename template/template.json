@@ -82,7 +82,7 @@
   "post-processors": [
     {
       "type": "vagrant",
-      "output": "./CentOS-6.4.box"
+      "output": "output/CentOS-6.4-{{ Provider }}.box"
     }
   ]
 }

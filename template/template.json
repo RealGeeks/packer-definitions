@@ -30,7 +30,7 @@
       ],
       "disk_size": 81920,
       "guest_os_type": "RedHat_64",
-      "http_directory": "http",
+      "http_directory": "tmp",
       "iso_checksum": "4a5fa01c81cc300f4729136e28ebe600",
       "iso_checksum_type": "md5",
       "iso_url": "http://mirror.ancl.hawaii.edu/linux/centos/6.4/isos/x86_64/CentOS-6.4-x86_64-minimal.iso",
@@ -65,7 +65,7 @@
       ],
       "disk_size": 81920,
       "guest_os_type": "centos-64",
-      "http_directory": "http",
+      "http_directory": "tmp",
       "iso_checksum": "4a5fa01c81cc300f4729136e28ebe600",
       "iso_checksum_type": "md5",
       "iso_url": "http://mirror.ancl.hawaii.edu/linux/centos/6.4/isos/x86_64/CentOS-6.4-x86_64-minimal.iso",
@@ -85,7 +85,7 @@
   "post-processors": [
     {
       "type": "vagrant",
-      "output": "output/CentOS-6.4-{{ .Provider }}.box"
+      "output": "output/CentOS-6.4-{{user `hostname`}}-{{ .Provider }}.box"
     }
   ]
 }

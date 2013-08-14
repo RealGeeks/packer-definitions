@@ -1,3 +1,4 @@
+import os
 import subprocess
 
 def get_output(command):
@@ -22,7 +23,7 @@ def replace_hostname(template, hostname):
 
 def write_host_files(host):
     template = open('template/http/ks.cfg').read()
-    with open('template/http/ks-{0}.cfg'.format(host),'w') as ks:
+    with open('tmp/ks-{0}.cfg'.format(host),'w') as ks:
         ks.write(replace_hostname(template,host))
 
 def main():

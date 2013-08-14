@@ -1,4 +1,4 @@
-default: output-virtualbox
+default: tmp
 tmp:
 	python2 build.py
 server_config:

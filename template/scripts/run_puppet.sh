@@ -6,10 +6,6 @@ tar xvf server_config.tar||true #sometimes this returns with exit code 1 due to 
 #Remove localdomain from /etc/resolv.conf because puppet doesn't like it
 sudo sed -i "s/localdomain//g" /etc/resolv.conf
 
-echo "OMG RESOLV.CONF"
-cat /etc/resolv.conf
-echo "OMG RESOLV.CONF DONE"
-
 chmod +x /home/packer/server_config/puppet/node_classifier
 
 # Copy rgenvs.py to /usr/local/bin/rgenvs

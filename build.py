@@ -1,4 +1,3 @@
-import os
 import subprocess
 
 def get_output(command):
@@ -19,7 +18,6 @@ def get_all_hosts(env="development"):
 
 def replace_hostname(template, hostname):
     return template.replace('$PACKER_HOST', hostname)
-
 
 def write_host_files(host):
     template = open('template/http/ks.cfg').read()

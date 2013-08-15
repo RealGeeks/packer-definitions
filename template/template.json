@@ -85,7 +85,7 @@
   "post-processors": [
     {
       "type": "vagrant",
-      "output": "output/CentOS-6.4-{{user `hostname`}}-{{ .Provider }}.box"
+      "output": "output/tmp.box"
     }
   ]
 }

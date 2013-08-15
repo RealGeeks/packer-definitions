@@ -3,3 +3,5 @@ tmp
 packer_cache
 server_config/
 server_config.tar
+output
+output-*

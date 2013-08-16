@@ -10,5 +10,5 @@ UNIQUE_HOSTS=$(echo "${HOSTS[@]}" | tr ' ' '\n' | sort -u | tr '\n' ' ')
 for host in $UNIQUE_HOSTS
 do
     packer build -var "hostname=$host" template/template.json
-    mv output/tmp.box "output/$hostname.box"
+    mv output/tmp.box "output/$host.box"
 done

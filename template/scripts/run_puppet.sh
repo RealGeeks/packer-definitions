@@ -3,8 +3,17 @@
 # Copy over server_config
 tar xvf server_config.tar||true #sometimes this returns with exit code 1 due to weird timestamp problems
 
-#Remove localdomain from /etc/resolv.conf because puppet doesn't like it
-sudo sed -i "s/localdomain//g" /etc/resolv.conf
+# For some reason, /etc/resolv.conf has to have "search dev" in it.  Other stuff in there makes the
+# node classifier barf
+sudo sed -i "s/^search.*/search dev/g" /etc/resolv.conf
+
+if ! sudo grep 'search' /etc/resolv.conf ; then
+    sudo bash -c "echo 'search dev' >> /etc/resolv.conf"
+fi
+
+echo "CONTENTS OF RESOLV.CONF ARE AS FOLLOWS"
+cat /etc/resolv.conf
+echo "THIS HAS BEEN A MESSAGE FROM YOUR FRIENDLY RESOLV.CONF"
 
 chmod +x /home/packer/server_config/puppet/node_classifier
 

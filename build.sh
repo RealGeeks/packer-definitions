@@ -1,5 +1,7 @@
 #!/bin/bash
 
+PATH=/opt/bin:$PATH
+
 containsElement () {
     for e in "${@:2}";
     do
